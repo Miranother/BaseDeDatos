@@ -4,11 +4,34 @@
  */
 package proyectobase;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author CEnrique ID:349388
  */
 public class Dulcería extends javax.swing.JFrame {
+        //Aqui establezco la conexion de la base de datos para el uso 
+    public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
+    public static final String USUARIO = "root";//¨Pongo el usuario 
+    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    PreparedStatement ps;
+    ResultSet rs;
+
+    public static Connection getConnection() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+            //Pongo excepciones para saber si hay errores y en donde
+            System.out.println("Conexion exitosa");
+        } catch (Exception e) {
+            System.out.println("Error al conectar con la base de datos");
+        }
+        return connection;
+    }
 
     /**
      * Creates new form Dulcería
