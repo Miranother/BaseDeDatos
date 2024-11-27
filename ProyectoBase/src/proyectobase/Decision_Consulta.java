@@ -27,41 +27,41 @@ public class Decision_Consulta extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        Clientes = new javax.swing.JButton();
-        Empleados = new javax.swing.JButton();
-        Proveedor = new javax.swing.JButton();
-        Productos = new javax.swing.JButton();
+        btnClientes = new javax.swing.JButton();
+        btnEmpleados = new javax.swing.JButton();
+        btnProveedor = new javax.swing.JButton();
+        btnProductos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dubai", 0, 60)); // NOI18N
         jLabel1.setText("Consulta");
 
-        Clientes.setText("Clientes");
-        Clientes.addActionListener(new java.awt.event.ActionListener() {
+        btnClientes.setText("Clientes");
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClientesActionPerformed(evt);
+                btnClientesActionPerformed(evt);
             }
         });
 
-        Empleados.setText("Empleados");
-        Empleados.addActionListener(new java.awt.event.ActionListener() {
+        btnEmpleados.setText("Empleados");
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmpleadosActionPerformed(evt);
+                btnEmpleadosActionPerformed(evt);
             }
         });
 
-        Proveedor.setText("Proveedor");
-        Proveedor.addActionListener(new java.awt.event.ActionListener() {
+        btnProveedor.setText("Proveedor");
+        btnProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProveedorActionPerformed(evt);
+                btnProveedorActionPerformed(evt);
             }
         });
 
-        Productos.setText("Productos");
-        Productos.addActionListener(new java.awt.event.ActionListener() {
+        btnProductos.setText("Productos");
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProductosActionPerformed(evt);
+                btnProductosActionPerformed(evt);
             }
         });
 
@@ -73,20 +73,20 @@ public class Decision_Consulta extends javax.swing.JFrame {
                 .addGap(172, 172, 172)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Empleados, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 92, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(134, 134, 134))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(537, 537, 537)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Proveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
+                    .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -96,33 +96,33 @@ public class Decision_Consulta extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Empleados, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(253, 253, 253))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ClientesActionPerformed
+    }//GEN-LAST:event_btnClientesActionPerformed
 
-    private void EmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosActionPerformed
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmpleadosActionPerformed
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
 
-    private void ProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProveedorActionPerformed
+    private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ProveedorActionPerformed
+    }//GEN-LAST:event_btnProveedorActionPerformed
 
-    private void ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosActionPerformed
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ProductosActionPerformed
+    }//GEN-LAST:event_btnProductosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +160,10 @@ public class Decision_Consulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Clientes;
-    private javax.swing.JButton Empleados;
-    private javax.swing.JButton Productos;
-    private javax.swing.JButton Proveedor;
+    private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnEmpleados;
+    private javax.swing.JButton btnProductos;
+    private javax.swing.JButton btnProveedor;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
