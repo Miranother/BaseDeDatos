@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,7 +18,8 @@ public class Dulcería extends javax.swing.JFrame {
         //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    
     PreparedStatement ps;
     ResultSet rs;
 
@@ -128,37 +130,24 @@ public class Dulcería extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dulcería.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dulcería.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dulcería.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dulcería.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
+
+public static void main(String args[]) {
+    // Verificar conexión a la base de datos antes de iniciar la interfaz
+    Connection conn = getConnection();
+    if (conn != null) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Dulcería().setVisible(true);
             }
         });
+    } else {
+        // Mostrar un mensaje de error si no se puede conectar a la base de datos
+        JOptionPane.showMessageDialog(null, "No se pudo conectar a la base de datos. Verifica la conexión.", 
+                                      "Error de conexión", JOptionPane.ERROR_MESSAGE);
     }
+}
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Label Dulceria;

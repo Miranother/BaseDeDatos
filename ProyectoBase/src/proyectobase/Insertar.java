@@ -4,11 +4,33 @@
  */
 package proyectobase;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author CEnrique ID:349388
  */
 public class Insertar extends javax.swing.JFrame {
+    //Establezco la conexion con la base de datos
+    public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";
+    public static final String USUARIO = "root";
+    public static final String CONTRASENA = "Ga2aiyun0";
+    PreparedStatement ps;
+    ResultSet rs;
+
+    public static Connection getConnection() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+            System.out.println("Conexion exitosa");
+        } catch (Exception e) {
+            System.out.println("Error al conectar con la base de datos");
+        }
+        return connection;
+    }
 
     /**
      * Creates new form Insertar
