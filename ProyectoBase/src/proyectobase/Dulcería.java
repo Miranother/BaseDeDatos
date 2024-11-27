@@ -139,7 +139,7 @@ public class Dulcería extends javax.swing.JFrame {
 
 
 public static void main(String args[]) {
-    // Verificar conexión a la base de datos antes de iniciar la interfaz
+    // Verificamos conexión a la base de datos antes de iniciar la interfaz
     Connection conn = getConnection();
     if (conn != null) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -148,7 +148,7 @@ public static void main(String args[]) {
             }
         });
     } else {
-        // Mostrar un mensaje de error si no se puede conectar a la base de datos
+        
         JOptionPane.showMessageDialog(null, "No se pudo conectar a la base de datos. Verifica la conexión.", 
                                       "Error de conexión", JOptionPane.ERROR_MESSAGE);
     }
