@@ -17,8 +17,8 @@ public class Consultas extends javax.swing.JFrame {
             //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    //public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
@@ -53,12 +53,15 @@ public class Consultas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtCategoria1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         ComboBoxOpciones = new javax.swing.JComboBox<>();
         btnRealizar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        txtIdproveedor = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +101,14 @@ public class Consultas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        txtIdproveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdproveedorActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("ID Proveedor:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,24 +119,31 @@ public class Consultas extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ComboBoxOpciones, 0, 574, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtIdproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(ComboBoxOpciones, 0, 574, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)))
+                .addContainerGap(54, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(108, 108, 108)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(116, Short.MAX_VALUE)))
+                    .addContainerGap(164, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtIdproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -145,97 +163,141 @@ public class Consultas extends javax.swing.JFrame {
 
     private void ComboBoxOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxOpcionesActionPerformed
           String opcionSeleccionada = ComboBoxOpciones.getSelectedItem().toString();
-    String consulta = "";
+        String consulta = "";
+        if (opcionSeleccionada.equals("Tipos de productos que suministra el proveedor")) {
+            // Mostrar el campo de texto y la etiqueta para ID de proveedor
+            jLabel1.setVisible(true);
+            txtIdproveedor.setVisible(true);
+        } else {
+            // Ocultar el campo de texto y la etiqueta para ID de proveedor
+            jLabel1.setVisible(false);
+            txtIdproveedor.setVisible(false);
+        }
 
-    switch (opcionSeleccionada) {
-        case "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.":
-            consulta = "SELECT * FROM Productos WHERE FechaCaducidad < '2025-01-01'";
+        switch (opcionSeleccionada) {
+            case "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.":
+                consulta = "SELECT * FROM Productos WHERE FechaCaducidad < '2025-01-01'";
+                break;
+            case "Productos que tengan un precio mayor a $100":
+                consulta = "SELECT * FROM Productos WHERE PrecioProducto > 100";
+                break;
+            case "Clientes que su método de pago sea con tarjeta":
+                consulta = "SELECT * FROM Clientes WHERE MetodoPago = 'Tarjeta'";
+                break;
+            case "Productos de la categoria Desechables":
+                consulta = "SELECT * FROM Productos WHERE Categoria = 'Desechables'";
+                break;
+            case "Clientes más frecuentes.":
+                consulta = "SELECT * FROM Clientes WHERE FrecuenciaCompra = (SELECT MAX(FrecuenciaCompra) FROM Clientes)";
+                break;
+            case "Número de empleados totales":
+                consulta = "SELECT COUNT(*) AS TotalEmpleados FROM Empleados";
+                break;
+            case "Proveedores que cobran más de $1000":
+                consulta = "SELECT * FROM Proveedor WHERE Pago > 1000";
+                break;
+            case "Clientes que tengan un teléfono que empiece con ‘449’":
+                consulta = "SELECT * FROM Clientes WHERE SUBSTRING(Telefono, 1, 3) = '449'";
+                break;
+            case "Empleados que tengan el puesto de ‘Jefe’":
+                consulta = "SELECT * FROM Empleados WHERE Puesto = 'Jefe'";
+                break;
+            case "Tipos de productos que suministra el proveedor":
+                // Obtener el ID del proveedor desde el campo de texto
+            String idProveedor = txtIdproveedor.getText().trim();
+            
+            // Verificar que el campo no esté vacío
+            if (idProveedor.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese el ID del proveedor.");
+                return; // Evitar continuar si no se ingresa el ID
+            }
+
+            // Si se ingresó un ID, prepara la consulta con el parámetro
+            consulta = "SELECT DISTINCT P.Categoria FROM Productos P JOIN Suministrar S ON P.ID_Producto = S.ID_Producto WHERE S.ID_Proveedor = ?";
+
+            // Ejecutar la consulta pasando el ID del proveedor
+            try (Connection conn = getConnection()) {
+                PreparedStatement ps = conn.prepareStatement(consulta);
+                ps.setString(1, idProveedor); // Establecer el ID del proveedor como parámetro
+                ResultSet rs = ps.executeQuery();
+                
+                // Procesar y mostrar los resultados
+                DefaultTableModel modelo = new DefaultTableModel();
+                int columnCount = rs.getMetaData().getColumnCount();
+                for (int i = 1; i <= columnCount; i++) {
+                    modelo.addColumn(rs.getMetaData().getColumnName(i));
+                }
+                while (rs.next()) {
+                    Object[] fila = new Object[columnCount];
+                    for (int i = 1; i <= columnCount; i++) {
+                        fila[i - 1] = rs.getObject(i);
+                    }
+                    modelo.addRow(fila);
+                }
+                jTable1.setModel(modelo); // Asignar los resultados a la tabla
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta: " + e.getMessage());
+            }
             break;
-        case "Productos que tengan un precio mayor a $100":
-            consulta = "SELECT * FROM Productos WHERE PrecioProducto > 100";
-            break;
-        case "Clientes que su método de pago sea con tarjeta":
-            consulta = "SELECT * FROM Clientes WHERE MetodoPago = 'Tarjeta'";
-            break;
-        case "Productos de la categoria Desechables":
-            consulta = "SELECT * FROM Productos WHERE Categoria = 'Desechables'";
-            break;
-        case "Clientes más frecuentes.":
-            consulta = "SELECT * FROM Clientes WHERE FrecuenciaCompra = (SELECT MAX(FrecuenciaCompra) FROM Clientes)";
-            break;
-        case "Número de empleados totales":
-            consulta = "SELECT COUNT(*) AS TotalEmpleados FROM Empleados";
-            break;
-        case "Proveedores que cobran más de $1000":
-            consulta = "SELECT * FROM Proveedor WHERE Pago > 1000";
-            break;
-        case "Clientes que tengan un teléfono que empiece con ‘449’":
-            consulta = "SELECT * FROM Clientes WHERE SUBSTRING(Telefono, 1, 3) = '449'";
-            break;
-        case "Empleados que tengan el puesto de ‘Jefe’":
-            consulta = "SELECT * FROM Empleados WHERE Puesto = 'Jefe'";
-            break;
-        case "Tipos de productos que suministra el proveedor":
-            consulta = "SELECT DISTINCT P.Categoria " +
-                       "FROM Productos P " +
-                       "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
-                       "WHERE S.ID_Proveedor = ?"; // Se asume que se pasa un ID de proveedor específico
-            break;
-        
-        //Algebra
-        case "Reporte de puesto y horario de los empleados":
-            consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
-            break;
-        case "Reporte del teléfono de cliente y de proveedor":
-            consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
-            break;
-        case "Reporte que muestre los productos de la categoria Dulce":
-            consulta = "SELECT * FROM Productos WHERE Categoria = 'Dulces'";
-            break;
-        case "Reporte del cliente y el empleado por quien fue atendido":
-            consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado " +
-                    "FROM Clientes C " +
-                    "JOIN Atender A ON C.ID_Cliente = A.ID_Cliente " +
-                    "JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
-            break;
-        case "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025":
-            consulta = "SELECT * FROM Productos WHERE FechaCaducidad BETWEEN '2024-12-01' AND '2025-02-01'";
-            break;
-        case "Reporte de Empleados que tengan un horario matutino ":
-            consulta = "SELECT * FROM Empleados WHERE HorarioLaboral >= '08:00' AND HorarioLaboral < '16:00'";
-            break;
-        case "Obtener el nombre del cliente y si su método de pago fue en efectivo ":
-            consulta = "SELECT C.Nombre, C.MetodoPago " +
-                    "FROM Clientes C " +
-                    "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
-                    "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
-                    "WHERE C.MetodoPago = 'Efectivo'";
-            break;
-        case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad":
-            consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad " +
-                    "FROM Clientes C " +
-                    "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
-                    "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
-                    "WHERE P.Categoria = 'Dulces'";
-            break;
-        case "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
-            consulta = "SELECT P.ID_Producto " +
-                    "FROM Productos P " +
-                    "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
-                    "WHERE P.PrecioProducto <= 300";
-            break;
-        case "Mostrar el id y la categoría de los productos que su categoría sea de dulces":
-            consulta = "SELECT ID_Producto, Categoria " +
-                    "FROM Productos " +
-                    "WHERE Categoria = 'Dulces'";
-            break;
-        default:
-            JOptionPane.showMessageDialog(this, "Opción no reconocida.");
-            return;
-    }
+
+            //Algebra
+            case "Reporte de puesto y horario de los empleados":
+                consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
+                break;
+            case "Reporte del teléfono de cliente y de proveedor":
+                consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
+                break;
+            case "Reporte que muestre los productos de la categoria Dulce":
+                consulta = "SELECT * FROM Productos WHERE Categoria = 'Dulces'";
+                break;
+            case "Reporte del cliente y el empleado por quien fue atendido":
+                consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado " +
+                        "FROM Clientes C " +
+                        "JOIN Atender A ON C.ID_Cliente = A.ID_Cliente " +
+                        "JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
+                break;
+            case "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025":
+                consulta = "SELECT * FROM Productos WHERE FechaCaducidad BETWEEN '2024-12-01' AND '2025-02-01'";
+                break;
+            case "Reporte de Empleados que tengan un horario matutino ":
+                consulta = "SELECT * FROM Empleados WHERE HorarioLaboral >= '08:00' AND HorarioLaboral < '16:00'";
+                break;
+            case "Obtener el nombre del cliente y si su método de pago fue en efectivo ":
+                consulta = "SELECT C.Nombre, C.MetodoPago " +
+                        "FROM Clientes C " +
+                        "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
+                        "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
+                        "WHERE C.MetodoPago = 'Efectivo'";
+                break;
+            case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad":
+                consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad " +
+                        "FROM Clientes C " +
+                        "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
+                        "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
+                        "WHERE P.Categoria = 'Dulces'";
+                break;
+            case "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
+                consulta = "SELECT P.ID_Producto " +
+                        "FROM Productos P " +
+                        "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
+                        "WHERE P.PrecioProducto <= 300";
+                break;
+            case "Mostrar el id y la categoría de los productos que su categoría sea de dulces":
+                consulta = "SELECT ID_Producto, Categoria " +
+                        "FROM Productos " +
+                        "WHERE Categoria = 'Dulces'";
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "Opción no reconocida.");
+                return;
+        }
     // Ejecutar la consulta y mostrar los resultados
     ejecutarConsulta(consulta);
     }//GEN-LAST:event_ComboBoxOpcionesActionPerformed
+
+    private void txtIdproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdproveedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdproveedorActionPerformed
 private void ejecutarConsulta(String consulta) {
     try (Connection conn = getConnection()) {
         ps = conn.prepareStatement(consulta);
@@ -312,9 +374,12 @@ private void ejecutarConsulta(String consulta) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxOpciones;
     private javax.swing.JButton btnRealizar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtCategoria1;
+    private javax.swing.JTextField txtIdproveedor;
     // End of variables declaration//GEN-END:variables
 }
