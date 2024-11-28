@@ -33,6 +33,7 @@ public class Consultas extends javax.swing.JFrame {
             System.out.println("Conexion exitosa");
         } catch (Exception e) {
             System.out.println("Error al conectar con la base de datos");
+            e.printStackTrace();
         }
         return connection;
     }
@@ -110,6 +111,8 @@ public class Consultas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jLabel1.setVisible(false);
+        txtIdproveedor.setVisible(false);
         txtIdproveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdproveedorActionPerformed(evt);
@@ -257,6 +260,7 @@ public class Consultas extends javax.swing.JFrame {
                 jTable1.setModel(modelo); // Asignar los resultados a la tabla
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta: " + e.getMessage());
+                 e.printStackTrace();
             }
             break;
 
@@ -356,7 +360,7 @@ private void ejecutarConsulta(String consulta) {
         jTable1.setModel(modelo);
 
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Bueno " + e.getMessage());
     }
 }
 
