@@ -17,8 +17,8 @@ public class Consultas extends javax.swing.JFrame {
             //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    //public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
@@ -73,7 +73,7 @@ public class Consultas extends javax.swing.JFrame {
             .addGap(0, 127, Short.MAX_VALUE)
         );
 
-        ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", " Productos de la categoria Desechables", " Clientes más frecuentes.", " Número de empleados totales", "Proveedores que cobran más de $1000", " Clientes que tengan un teléfono que empiece con ‘449’", " Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces" }));
+        ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", "Productos de la categoria Desechables", "Clientes más frecuentes.", "Número de empleados totales", "Proveedores que cobran más de $1000", "Clientes que tengan un teléfono que empiece con ‘449’", "Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces" }));
         ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxOpcionesActionPerformed(evt);
