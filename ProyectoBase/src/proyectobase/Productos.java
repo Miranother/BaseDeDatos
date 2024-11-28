@@ -69,6 +69,7 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
         txtDesc = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtIdProducto = new javax.swing.JTextField();
+        btnregresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -153,6 +154,13 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
 
         jLabel10.setText("IdProducto:");
 
+        btnregresar.setText("Regresar");
+        btnregresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,13 +173,14 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
                 .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(174, 174, 174)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnregresar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEliminar)
@@ -180,10 +189,8 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
                                 .addGap(35, 35, 35)
                                 .addComponent(btnBuscar)
                                 .addGap(44, 44, 44)
-                                .addComponent(btnLimpiar)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(84, 84, 84)
-                            .addComponent(Jtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnLimpiar))
+                            .addComponent(Jtitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -235,7 +242,9 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
                     .addComponent(btnEliminar)
                     .addComponent(btnAgregar))
                 .addGap(130, 130, 130)
-                .addComponent(btnSalir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalir)
+                    .addComponent(btnregresar))
                 .addGap(30, 30, 30))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -409,6 +418,13 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescActionPerformed
 
+    private void btnregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregresarActionPerformed
+        // TODO add your handling code here:
+        Dulceria dulc = new Dulceria();
+        dulc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnregresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -453,6 +469,7 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnregresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -62,6 +62,7 @@ public class Consultas extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         txtIdproveedor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,12 +110,21 @@ public class Consultas extends javax.swing.JFrame {
 
         jLabel1.setText("ID Proveedor:");
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(394, 394, 394)
+                .addGap(264, 264, 264)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
                 .addComponent(btnRealizar)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -149,7 +159,9 @@ public class Consultas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(btnRealizar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRealizar)
+                    .addComponent(btnRegresar))
                 .addGap(25, 25, 25))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -298,6 +310,10 @@ public class Consultas extends javax.swing.JFrame {
     private void txtIdproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdproveedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdproveedorActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
 private void ejecutarConsulta(String consulta) {
     try (Connection conn = getConnection()) {
         ps = conn.prepareStatement(consulta);
@@ -374,6 +390,7 @@ private void ejecutarConsulta(String consulta) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxOpciones;
     private javax.swing.JButton btnRealizar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

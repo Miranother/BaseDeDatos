@@ -77,6 +77,7 @@ public class Proveedor extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtPago = new javax.swing.JTextField();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -155,6 +156,13 @@ public class Proveedor extends javax.swing.JFrame {
             }
         });
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,15 +181,6 @@ public class Proveedor extends javax.swing.JFrame {
                                     .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnEliminar)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnModificar)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnBuscar)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnLimpiar))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
@@ -189,7 +188,18 @@ public class Proveedor extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtApepat, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtApemat, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(txtCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnEliminar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnModificar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnBuscar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnLimpiar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -214,7 +224,7 @@ public class Proveedor extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCp, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(64, 64, 64)
+                        .addGap(52, 52, 52)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtIdproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -275,7 +285,8 @@ public class Proveedor extends javax.swing.JFrame {
                     .addComponent(btnEliminar)
                     .addComponent(btnModificar)
                     .addComponent(btnBuscar)
-                    .addComponent(btnLimpiar))
+                    .addComponent(btnLimpiar)
+                    .addComponent(btnRegresar))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -430,6 +441,13 @@ public class Proveedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCategoriaActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        Dulceria dulc = new Dulceria();
+        dulc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -471,6 +489,7 @@ public class Proveedor extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
