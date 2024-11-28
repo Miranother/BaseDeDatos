@@ -17,8 +17,8 @@ public class Consultas extends javax.swing.JFrame {
             //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    //public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
@@ -181,75 +181,86 @@ public class Consultas extends javax.swing.JFrame {
                        "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
                        "WHERE S.ID_Proveedor = ?"; // Se asume que se pasa un ID de proveedor específico
             break;
+        
+        //Algebra
+        case "Reporte de puesto y horario de los empleados":
+            consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
+            break;
+        case "Reporte del teléfono de cliente y de proveedor":
+            consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
+            break;
+        case "Reporte que muestre los productos de la categoria Dulce":
+            consulta = "SELECT * FROM Productos WHERE Categoria = 'Dulces'";
+            break;
+        case "Reporte del cliente y el empleado por quien fue atendido":
+            consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado " +
+                    "FROM Clientes C " +
+                    "JOIN Atender A ON C.ID_Cliente = A.ID_Cliente " +
+                    "JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
+            break;
+        case "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025":
+            consulta = "SELECT * FROM Productos WHERE FechaCaducidad BETWEEN '2024-12-01' AND '2025-02-01'";
+            break;
+        case "Reporte de Empleados que tengan un horario matutino ":
+            consulta = "SELECT * FROM Empleados WHERE HorarioLaboral >= '08:00' AND HorarioLaboral < '16:00'";
+            break;
+        case "Obtener el nombre del cliente y si su método de pago fue en efectivo ":
+            consulta = "SELECT C.Nombre, C.MetodoPago " +
+                    "FROM Clientes C " +
+                    "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
+                    "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
+                    "WHERE C.MetodoPago = 'Efectivo'";
+            break;
+        case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad":
+            consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad " +
+                    "FROM Clientes C " +
+                    "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
+                    "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
+                    "WHERE P.Categoria = 'Dulces'";
+            break;
+        case "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
+            consulta = "SELECT P.ID_Producto " +
+                    "FROM Productos P " +
+                    "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
+                    "WHERE P.PrecioProducto <= 300";
+            break;
+        case "Mostrar el id y la categoría de los productos que su categoría sea de dulces":
+            consulta = "SELECT ID_Producto, Categoria " +
+                    "FROM Productos " +
+                    "WHERE Categoria = 'Dulces'";
+            break;
         default:
-            JOptionPane.showMessageDialog(this, "Opción no válida");
+            JOptionPane.showMessageDialog(this, "Opción no reconocida.");
             return;
     }
-
     // Ejecutar la consulta y mostrar los resultados
     ejecutarConsulta(consulta);
     }//GEN-LAST:event_ComboBoxOpcionesActionPerformed
 private void ejecutarConsulta(String consulta) {
     try (Connection conn = getConnection()) {
         ps = conn.prepareStatement(consulta);
-
-        // Si la consulta requiere un parámetro (como el ID del proveedor), lo agregamos aquí.
-        if (consulta.contains("WHERE S.ID_Proveedor = ?")) {
-            // Coloca el valor del ID del proveedor (por ejemplo, 1)
-            ps.setInt(1, 1); // Asegúrate de pasar el valor correcto
-        }
-
         rs = ps.executeQuery();
 
-        // Crear un modelo para la tabla y agregar los encabezados
+        // Crear un modelo para la tabla
         DefaultTableModel modelo = new DefaultTableModel();
 
-        // Aquí dependemos de la consulta para agregar las columnas correspondientes
-        if (consulta.contains("Productos")) {
-            modelo.addColumn("ID Producto");
-            modelo.addColumn("Categoría");
-            modelo.addColumn("Precio Producto");
-            modelo.addColumn("Precio Proveedor");
-            modelo.addColumn("Fecha Caducidad");
-            modelo.addColumn("Descripción");
-        } else if (consulta.contains("Clientes")) {
-            modelo.addColumn("ID Cliente");
-            modelo.addColumn("Nombre");
-            modelo.addColumn("Apellido");
-            modelo.addColumn("Método de Pago");
-            modelo.addColumn("Frecuencia Compra");
-        } else if (consulta.contains("Empleados")) {
-            modelo.addColumn("ID Empleado");
-            modelo.addColumn("Nombre");
-            modelo.addColumn("Puesto");
-            modelo.addColumn("Horario Laboral");
+        // Obtener las columnas de la consulta para agregarlas dinámicamente
+        int columnCount = rs.getMetaData().getColumnCount();
+
+        // Agregar las columnas al modelo según el número de columnas en la consulta
+        for (int i = 1; i <= columnCount; i++) {
+            modelo.addColumn(rs.getMetaData().getColumnName(i));
         }
 
-        // Llenamos la tabla con los resultados de la consulta
+        // Llenar la tabla con los resultados de la consulta
         while (rs.next()) {
-            Object[] fila = new Object[modelo.getColumnCount()];
+            Object[] fila = new Object[columnCount]; // Crear una fila con el mismo número de columnas
 
-            if (consulta.contains("Productos")) {
-                fila[0] = rs.getInt("ID_Producto");
-                fila[1] = rs.getString("Categoria");
-                fila[2] = rs.getInt("PrecioProducto");
-                fila[3] = rs.getInt("PrecioProveedor");
-                fila[4] = rs.getDate("FechaCaducidad");
-                fila[5] = rs.getString("Descripcion");
-            } else if (consulta.contains("Clientes")) {
-                fila[0] = rs.getInt("ID_Cliente");
-                fila[1] = rs.getString("Nombre");
-                fila[2] = rs.getString("ApellidoPat");
-                fila[3] = rs.getString("MetodoPago");
-                fila[4] = rs.getString("FrecuenciaCompra");
-            } else if (consulta.contains("Empleados")) {
-                fila[0] = rs.getInt("ID_Empleado");
-                fila[1] = rs.getString("Nombre");
-                fila[2] = rs.getString("Puesto");
-                fila[3] = rs.getString("HorarioLaboral");
+            for (int i = 1; i <= columnCount; i++) {
+                fila[i - 1] = rs.getObject(i); // Obtener el valor de cada columna
             }
 
-            modelo.addRow(fila);
+            modelo.addRow(fila); // Agregar la fila al modelo
         }
 
         // Asignamos el modelo a la tabla para que se actualice
@@ -259,6 +270,9 @@ private void ejecutarConsulta(String consulta) {
         JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta: " + e.getMessage());
     }
 }
+
+
+
   
     /**
      * @param args the command line arguments
