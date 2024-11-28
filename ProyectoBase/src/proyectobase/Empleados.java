@@ -44,6 +44,8 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
     
     public Empleados() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
