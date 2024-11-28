@@ -268,48 +268,32 @@ public class Consultas extends javax.swing.JFrame {
             case "Reporte de puesto y horario de los empleados":
                 consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
                 break;
-            case "Reporte del teléfono de cliente y de proveedor":
+            case "Reporte del telefono de los clientes y proveedores":
                 consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
                 break;
             case "Reporte que muestre los productos de la categoria Dulce":
                 consulta = "SELECT * FROM Productos WHERE Categoria = 'Dulces'";
                 break;
-            case "Reporte del cliente y el empleado por quien fue atendido":
-                consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado " +
-                        "FROM Clientes C " +
-                        "JOIN Atender A ON C.ID_Cliente = A.ID_Cliente " +
-                        "JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
+            case "Reporte del cliente y el empleado por quien fue atendido ":
+                consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado FROM Clientes C JOIN Atender A ON C.ID_Cliente = A.ID_Cliente JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
                 break;
-            case "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025":
+            case "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ":
                 consulta = "SELECT * FROM Productos WHERE FechaCaducidad BETWEEN '2024-12-01' AND '2025-02-01'";
                 break;
             case "Reporte de Empleados que tengan un horario matutino ":
                 consulta = "SELECT * FROM Empleados WHERE HorarioLaboral >= '08:00' AND HorarioLaboral < '16:00'";
                 break;
             case "Obtener el nombre del cliente y si su método de pago fue en efectivo ":
-                consulta = "SELECT C.Nombre, C.MetodoPago " +
-                        "FROM Clientes C " +
-                        "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
-                        "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
-                        "WHERE C.MetodoPago = 'Efectivo'";
+                consulta = "SELECT C.Nombre, C.MetodoPago FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE C.MetodoPago = 'Efectivo'";
                 break;
-            case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad":
-                consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad " +
-                        "FROM Clientes C " +
-                        "JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente " +
-                        "JOIN Productos P ON Co.ID_Producto = P.ID_Producto " +
-                        "WHERE P.Categoria = 'Dulces'";
+            case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ":
+                consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE P.Categoria = 'Dulces'";
                 break;
             case "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
-                consulta = "SELECT P.ID_Producto " +
-                        "FROM Productos P " +
-                        "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
-                        "WHERE P.PrecioProducto <= 300";
+                consulta = "SELECT P.ID_Producto FROM Productos P JOIN Suministrar S ON P.ID_Producto = S.ID_Producto WHERE P.PrecioProducto <= 300";
                 break;
             case "Mostrar el id y la categoría de los productos que su categoría sea de dulces":
-                consulta = "SELECT ID_Producto, Categoria " +
-                        "FROM Productos " +
-                        "WHERE Categoria = 'Dulces'";
+                consulta = "SELECT ID_Producto, Categoria FROM Productos WHERE Categoria = 'Dulces';";
                 break;
             default:
                 JOptionPane.showMessageDialog(this, "Opción no reconocida.");
@@ -360,7 +344,7 @@ private void ejecutarConsulta(String consulta) {
         jTable1.setModel(modelo);
 
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Bueno " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Error al relizar la consulta");
     }
 }
 
