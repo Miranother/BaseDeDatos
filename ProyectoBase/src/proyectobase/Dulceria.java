@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package proyectobase;
-
+package ProyectoBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,12 +14,12 @@ import javax.swing.JOptionPane;
  *
  * @author Alan Gael Gallardo Jimenez ID:351914
  */
-public class Dulceria_inicio extends javax.swing.JFrame {
+public class Dulceria extends javax.swing.JFrame {
             //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    //public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
@@ -41,7 +40,7 @@ public class Dulceria_inicio extends javax.swing.JFrame {
     /**
      * Creates new form Decision_Consulta
      */
-    public Dulceria_inicio() {
+    public Dulceria() {
         initComponents();
     }
 
@@ -154,10 +153,9 @@ public class Dulceria_inicio extends javax.swing.JFrame {
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
         // TODO add your handling code here:
-        Empleados empleados= new Empleados();
-        empleados.setVisible(true);
+        Empleados empl= new Empleados();
+        empl.setVisible(true);
         this.dispose();
-        
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
@@ -168,6 +166,9 @@ public class Dulceria_inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProveedorActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+        Productos prod=new Productos();
+        prod.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
@@ -186,7 +187,7 @@ public class Dulceria_inicio extends javax.swing.JFrame {
     if (conn != null) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dulceria_inicio().setVisible(true);
+                new Dulceria().setVisible(true);
             }
         });
     } else {
