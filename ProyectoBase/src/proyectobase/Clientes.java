@@ -22,7 +22,7 @@ public class Clientes extends javax.swing.JFrame {
     public static final String USUARIO = "root";//¨Pongo el usuario 
     //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
     public static String CONTRASENA = "";//Y la contraseña de la maquina
-    
+    //ola
     PreparedStatement ps;
     ResultSet rs;
 
