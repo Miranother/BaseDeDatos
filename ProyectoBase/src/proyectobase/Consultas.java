@@ -186,7 +186,7 @@ public class Consultas extends javax.swing.JFrame {
         case "Reporte de puesto y horario de los empleados":
             consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
             break;
-        case "Reporte del teléfono de cliente y de proveedor":
+        case "Reporte del telefono de los clientes y proveedores":
             consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
             break;
         case "Reporte que muestre los productos de la categoria Dulce":
