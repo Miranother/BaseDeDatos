@@ -72,7 +72,7 @@ public class Consultas extends javax.swing.JFrame {
         );
 
         ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al\n" +
-            " 1/Enero/2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", " Productos de la categoria “Desechables”", " Clientes más frecuentes.", " Número de empleados totales", "Proveedores que cobran más de $1000", " Clientes que tengan un teléfono que empiece con ‘449’", " Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Opcion11", "Opcion12", "Opcion13", "Opcion14", "Opcion15", "Opcion16", "Opcion17", "Opcion18", "Opcion19", "Opcion20" }));
+            " 1/Enero/2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", " Productos de la categoria “Desechables”", " Clientes más frecuentes.", " Número de empleados totales", "Proveedores que cobran más de $1000", " Clientes que tengan un teléfono que empiece con ‘449’", " Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces" }));
 ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
         ComboBoxOpcionesActionPerformed(evt);
@@ -101,8 +101,8 @@ ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(244, 244, 244)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(56, Short.MAX_VALUE))
+                .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap(23, Short.MAX_VALUE))
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(108, 108, 108)
