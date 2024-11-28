@@ -289,7 +289,7 @@ public class Consultas extends javax.swing.JFrame {
             case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ":
                 consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE P.Categoria = 'Dulces'";
                 break;
-            case "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
+            case "Reporte de todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
                 consulta = "SELECT P.ID_Producto FROM Productos P JOIN Suministrar S ON P.ID_Producto = S.ID_Producto WHERE P.PrecioProducto <= 300";
                 break;
             case "Mostrar el id y la categoría de los productos que su categoría sea de dulces":
