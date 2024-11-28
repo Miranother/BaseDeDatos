@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -17,8 +18,7 @@ public class Consultas extends javax.swing.JFrame {
             //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    //public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    public static String CONTRASENA = "";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
@@ -26,6 +26,8 @@ public class Consultas extends javax.swing.JFrame {
     public static Connection getConnection() {
         Connection connection = null;
         try {
+            
+            CONTRASENA=pedirContrasena();
             connection = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
             //Pongo excepciones para saber si hay errores y en donde
             System.out.println("Conexion exitosa");
@@ -33,6 +35,12 @@ public class Consultas extends javax.swing.JFrame {
             System.out.println("Error al conectar con la base de datos");
         }
         return connection;
+    }
+       
+        public static String pedirContrasena() {
+        JPasswordField passwordField = new JPasswordField();
+        JOptionPane.showConfirmDialog(null, passwordField, "Introduce la contraseña", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+        return new String(passwordField.getPassword());  // Convertir el array de caracteres a String
     }
 
     
