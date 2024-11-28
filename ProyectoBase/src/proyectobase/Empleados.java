@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 /**
@@ -46,6 +47,8 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        ImageIcon icono = new ImageIcon(getClass().getResource("/Recursos/dul.png"));
+        setIconImage(icono.getImage());
     }
 
     /**
@@ -71,7 +74,6 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
         btnLimpiar = new javax.swing.JButton();
         txtApeMat = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        btnSalir = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -147,13 +149,6 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
 
         jLabel4.setText("Telefono:");
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Puesto:");
 
         jLabel6.setText("Horario Lab:");
@@ -212,9 +207,7 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135))
+                .addGap(154, 154, 154))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -280,9 +273,7 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir)
-                    .addComponent(btnRegresar))
+                .addComponent(btnRegresar)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -489,10 +480,6 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApeMatActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelActionPerformed
@@ -561,7 +548,6 @@ public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me con
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

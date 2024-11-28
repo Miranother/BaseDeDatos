@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ProyectoBase;
-
+import java.io.IOException;
+import java.io.InputStream;
+import javax.swing.ImageIcon;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
@@ -51,6 +54,12 @@ public class Dulceria extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        //ImageIcon icono = new ImageIcon(getClass().getResource("/proyectobase/dulceria.ico"));
+        //setIconImage(icono.getImage());
+        //InputStream input = getClass().getResourceAsStream("/Recursos/dul.png");
+        ImageIcon icono = new ImageIcon(getClass().getResource("/Recursos/dul.png"));
+        setIconImage(icono.getImage());
+
     }
 
     /**
@@ -68,6 +77,7 @@ public class Dulceria extends javax.swing.JFrame {
         btnProductos = new javax.swing.JButton();
         Dulceria = new java.awt.Label();
         btnConsulta = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -112,6 +122,13 @@ public class Dulceria extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,7 +150,10 @@ public class Dulceria extends javax.swing.JFrame {
                         .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(147, 147, 147)
-                        .addComponent(Dulceria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Dulceria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -150,7 +170,9 @@ public class Dulceria extends javax.swing.JFrame {
                     .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -190,6 +212,10 @@ public class Dulceria extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnConsultaActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,5 +243,6 @@ public class Dulceria extends javax.swing.JFrame {
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnProveedor;
+    private javax.swing.JButton btnSalir;
     // End of variables declaration//GEN-END:variables
 }
