@@ -16,8 +16,8 @@ public class Empleados extends javax.swing.JFrame {
      */
 public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    //public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
+    //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
+    public static final String CONTRASENA = "Ga2aiyun0";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
