@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author CEnrique ID:349388
@@ -55,8 +56,9 @@ public class Consultas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         ComboBoxOpciones = new javax.swing.JComboBox<>();
         btnRealizar = new javax.swing.JButton();
-        Panel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,70 +73,193 @@ public class Consultas extends javax.swing.JFrame {
             .addGap(0, 127, Short.MAX_VALUE)
         );
 
-        ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al\n" +
-            " 1/Enero/2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", " Productos de la categoria “Desechables”", " Clientes más frecuentes.", " Número de empleados totales", "Proveedores que cobran más de $1000", " Clientes que tengan un teléfono que empiece con ‘449’", " Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces" }));
-ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
-    public void actionPerformed(java.awt.event.ActionEvent evt) {
-        ComboBoxOpcionesActionPerformed(evt);
-    }
-    });
+        ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", " Productos de la categoria Desechables", " Clientes más frecuentes.", " Número de empleados totales", "Proveedores que cobran más de $1000", " Clientes que tengan un teléfono que empiece con ‘449’", " Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces" }));
+        ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxOpcionesActionPerformed(evt);
+            }
+        });
 
-    btnRealizar.setText("Realizar");
+        btnRealizar.setText("Realizar");
 
-    Panel.setText("Panel");
+        jLabel2.setFont(new java.awt.Font("Eras Bold ITC", 1, 20)); // NOI18N
+        jLabel2.setText("CONSULTAS");
 
-    jLabel2.setFont(new java.awt.Font("Eras Bold ITC", 1, 20)); // NOI18N
-    jLabel2.setText("CONSULTAS");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnRealizar)
-            .addGap(119, 119, 119))
-        .addGroup(layout.createSequentialGroup()
-            .addGap(27, 27, 27)
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(394, 394, 394)
+                .addComponent(btnRealizar)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComboBoxOpciones, 0, 574, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(244, 244, 244)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(23, Short.MAX_VALUE))
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGap(108, 108, 108)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(116, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE)))
-    );
-    layout.setVerticalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(11, 11, 11)
-            .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(42, 42, 42)
-            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(btnRealizar)
-            .addContainerGap(29, Short.MAX_VALUE))
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE)))
-    );
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(btnRealizar)
+                .addGap(25, 25, 25))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(205, 205, 205)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(168, Short.MAX_VALUE)))
+        );
 
-    pack();
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComboBoxOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxOpcionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxOpcionesActionPerformed
+          String opcionSeleccionada = ComboBoxOpciones.getSelectedItem().toString();
+    String consulta = "";
 
+    switch (opcionSeleccionada) {
+        case "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.":
+            consulta = "SELECT * FROM Productos WHERE FechaCaducidad < '2025-01-01'";
+            break;
+        case "Productos que tengan un precio mayor a $100":
+            consulta = "SELECT * FROM Productos WHERE PrecioProducto > 100";
+            break;
+        case "Clientes que su método de pago sea con tarjeta":
+            consulta = "SELECT * FROM Clientes WHERE MetodoPago = 'Tarjeta'";
+            break;
+        case "Productos de la categoria Desechables":
+            consulta = "SELECT * FROM Productos WHERE Categoria = 'Desechables'";
+            break;
+        case "Clientes más frecuentes.":
+            consulta = "SELECT * FROM Clientes WHERE FrecuenciaCompra = (SELECT MAX(FrecuenciaCompra) FROM Clientes)";
+            break;
+        case "Número de empleados totales":
+            consulta = "SELECT COUNT(*) AS TotalEmpleados FROM Empleados";
+            break;
+        case "Proveedores que cobran más de $1000":
+            consulta = "SELECT * FROM Proveedor WHERE Pago > 1000";
+            break;
+        case "Clientes que tengan un teléfono que empiece con ‘449’":
+            consulta = "SELECT * FROM Clientes WHERE SUBSTRING(Telefono, 1, 3) = '449'";
+            break;
+        case "Empleados que tengan el puesto de ‘Jefe’":
+            consulta = "SELECT * FROM Empleados WHERE Puesto = 'Jefe'";
+            break;
+        case "Tipos de productos que suministra el proveedor":
+            consulta = "SELECT DISTINCT P.Categoria " +
+                       "FROM Productos P " +
+                       "JOIN Suministrar S ON P.ID_Producto = S.ID_Producto " +
+                       "WHERE S.ID_Proveedor = ?"; // Se asume que se pasa un ID de proveedor específico
+            break;
+        default:
+            JOptionPane.showMessageDialog(this, "Opción no válida");
+            return;
+    }
+
+    // Ejecutar la consulta y mostrar los resultados
+    ejecutarConsulta(consulta);
+    }//GEN-LAST:event_ComboBoxOpcionesActionPerformed
+private void ejecutarConsulta(String consulta) {
+    try (Connection conn = getConnection()) {
+        ps = conn.prepareStatement(consulta);
+
+        // Si la consulta requiere un parámetro (como el ID del proveedor), lo agregamos aquí.
+        if (consulta.contains("WHERE S.ID_Proveedor = ?")) {
+            // Coloca el valor del ID del proveedor (por ejemplo, 1)
+            ps.setInt(1, 1); // Asegúrate de pasar el valor correcto
+        }
+
+        rs = ps.executeQuery();
+
+        // Crear un modelo para la tabla y agregar los encabezados
+        DefaultTableModel modelo = new DefaultTableModel();
+
+        // Aquí dependemos de la consulta para agregar las columnas correspondientes
+        if (consulta.contains("Productos")) {
+            modelo.addColumn("ID Producto");
+            modelo.addColumn("Categoría");
+            modelo.addColumn("Precio Producto");
+            modelo.addColumn("Precio Proveedor");
+            modelo.addColumn("Fecha Caducidad");
+            modelo.addColumn("Descripción");
+        } else if (consulta.contains("Clientes")) {
+            modelo.addColumn("ID Cliente");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Método de Pago");
+            modelo.addColumn("Frecuencia Compra");
+        } else if (consulta.contains("Empleados")) {
+            modelo.addColumn("ID Empleado");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Puesto");
+            modelo.addColumn("Horario Laboral");
+        }
+
+        // Llenamos la tabla con los resultados de la consulta
+        while (rs.next()) {
+            Object[] fila = new Object[modelo.getColumnCount()];
+
+            if (consulta.contains("Productos")) {
+                fila[0] = rs.getInt("ID_Producto");
+                fila[1] = rs.getString("Categoria");
+                fila[2] = rs.getInt("PrecioProducto");
+                fila[3] = rs.getInt("PrecioProveedor");
+                fila[4] = rs.getDate("FechaCaducidad");
+                fila[5] = rs.getString("Descripcion");
+            } else if (consulta.contains("Clientes")) {
+                fila[0] = rs.getInt("ID_Cliente");
+                fila[1] = rs.getString("Nombre");
+                fila[2] = rs.getString("ApellidoPat");
+                fila[3] = rs.getString("MetodoPago");
+                fila[4] = rs.getString("FrecuenciaCompra");
+            } else if (consulta.contains("Empleados")) {
+                fila[0] = rs.getInt("ID_Empleado");
+                fila[1] = rs.getString("Nombre");
+                fila[2] = rs.getString("Puesto");
+                fila[3] = rs.getString("HorarioLaboral");
+            }
+
+            modelo.addRow(fila);
+        }
+
+        // Asignamos el modelo a la tabla para que se actualice
+        jTable1.setModel(modelo);
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta: " + e.getMessage());
+    }
+}
+  
     /**
      * @param args the command line arguments
      */
@@ -172,9 +297,10 @@ ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxOpciones;
-    private javax.swing.JLabel Panel;
     private javax.swing.JButton btnRealizar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

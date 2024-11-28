@@ -23,28 +23,28 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="394" max="-2" attributes="0"/>
               <Component id="btnRealizar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Panel" alignment="0" min="-2" pref="541" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="ComboBoxOpciones" alignment="0" min="-2" pref="574" max="-2" attributes="0"/>
+                  <Component id="ComboBoxOpciones" alignment="0" pref="574" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="133" max="32767" attributes="0"/>
+                  <EmptySpace pref="116" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -56,11 +56,11 @@
               <Component id="jLabel2" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="ComboBoxOpciones" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Component id="Panel" min="-2" pref="305" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="276" max="-2" attributes="0"/>
+              <EmptySpace pref="81" max="32767" attributes="0"/>
               <Component id="btnRealizar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
@@ -91,7 +91,7 @@
     <Component class="javax.swing.JComboBox" name="ComboBoxOpciones">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Productos que tengan su fecha de caducidad menor al\n&quot; +&#xa;    &quot; 1/Enero/2025.&quot;, &quot;Productos que tengan un precio mayor a $100&quot;, &quot;Clientes que su m&#xe9;todo de pago sea con tarjeta&quot;, &quot; Productos de la categoria &#x201c;Desechables&#x201d;&quot;, &quot; Clientes m&#xe1;s frecuentes.&quot;, &quot; N&#xfa;mero de empleados totales&quot;, &quot;Proveedores que cobran m&#xe1;s de $1000&quot;, &quot; Clientes que tengan un tel&#xe9;fono que empiece con &#x2018;449&#x2019;&quot;, &quot; Empleados que tengan el puesto de &#x2018;Jefe&#x2019;&quot;, &quot;Tipos de productos que suministra el proveedor&quot;, &quot;Reporte de puesto y horario de los empleados&quot;, &quot;Reporte del telefono de los clientes y proveedores&quot;, &quot;Reporte que muestre los productos de la categoria Dulce&quot;, &quot;Reporte del cliente y el empleado por quien fue atendido &quot;, &quot;Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. &quot;, &quot;Reporte de Empleados que tengan un horario matutino &quot;, &quot;Obtener el nombre del cliente y si su m&#xe9;todo de pago fue en efectivo &quot;, &quot;Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad &quot;, &quot;Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor&quot;, &quot;Mostrar el id y la categor&#xed;a de los productos que su categor&#xed;a sea de dulces&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Productos que tengan su fecha de caducidad menor al 1-Enero-2025.&quot;, &quot;Productos que tengan un precio mayor a $100&quot;, &quot;Clientes que su m&#xe9;todo de pago sea con tarjeta&quot;, &quot; Productos de la categoria Desechables&quot;, &quot; Clientes m&#xe1;s frecuentes.&quot;, &quot; N&#xfa;mero de empleados totales&quot;, &quot;Proveedores que cobran m&#xe1;s de $1000&quot;, &quot; Clientes que tengan un tel&#xe9;fono que empiece con &#x2018;449&#x2019;&quot;, &quot; Empleados que tengan el puesto de &#x2018;Jefe&#x2019;&quot;, &quot;Tipos de productos que suministra el proveedor&quot;, &quot;Reporte de puesto y horario de los empleados&quot;, &quot;Reporte del telefono de los clientes y proveedores&quot;, &quot;Reporte que muestre los productos de la categoria Dulce&quot;, &quot;Reporte del cliente y el empleado por quien fue atendido &quot;, &quot;Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. &quot;, &quot;Reporte de Empleados que tengan un horario matutino &quot;, &quot;Obtener el nombre del cliente y si su m&#xe9;todo de pago fue en efectivo &quot;, &quot;Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad &quot;, &quot;Reporte que muestre todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor&quot;, &quot;Mostrar el id y la categor&#xed;a de los productos que su categor&#xed;a sea de dulces&quot; })" type="code"/>
         </Property>
       </Properties>
       <Events>
@@ -106,11 +106,6 @@
         <Property name="text" type="java.lang.String" value="Realizar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Panel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Panel"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -119,5 +114,26 @@
         <Property name="text" type="java.lang.String" value="CONSULTAS"/>
       </Properties>
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jTable1">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="4">
+                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+              </Table>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
