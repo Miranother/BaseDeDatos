@@ -21,7 +21,7 @@ public class Clientes extends javax.swing.JFrame {
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
     //public static final String CONTRASENA = "Alangael18";//Y la contraseña de la maquina
-    public static String CONTRASENA = "046712";//Y la contraseña de la maquina
+    public static String CONTRASENA = "Paolagbr5";//Y la contraseña de la maquina
     //ola
     PreparedStatement ps;
     ResultSet rs;
@@ -93,7 +93,6 @@ public class Clientes extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
 
         txtApellPat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
