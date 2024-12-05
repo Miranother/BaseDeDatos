@@ -85,8 +85,6 @@ public class Dulceria extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 0, 51));
         setForeground(new java.awt.Color(153, 204, 255));
         setLocation(new java.awt.Point(0, 0));
-        setMaximumSize(null);
-        setPreferredSize(new java.awt.Dimension(600, 500));
 
         jPanel1.setBackground(new java.awt.Color(119, 176, 209));
 
@@ -181,7 +179,7 @@ public class Dulceria extends javax.swing.JFrame {
                             .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
+                        .addGap(237, 237, 237)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -200,9 +198,9 @@ public class Dulceria extends javax.swing.JFrame {
                 .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(btnSalir)
-                .addGap(22, 22, 22))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
