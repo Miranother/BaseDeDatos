@@ -18,7 +18,7 @@ public class Consultas extends javax.swing.JFrame {
             //Aqui establezco la conexion de la base de datos para el uso 
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/dulceria";//Me conecto a la base de consultorio 
     public static final String USUARIO = "root";//¨Pongo el usuario 
-    public static String CONTRASENA = "Paolagbr5";//Y la contraseña de la maquina
+    public static String CONTRASENA = "046712";//Y la contraseña de la maquina
     
     PreparedStatement ps;
     ResultSet rs;
@@ -65,39 +65,38 @@ public class Consultas extends javax.swing.JFrame {
         txtCategoria1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtIdproveedor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         ComboBoxOpciones = new javax.swing.JComboBox<>();
         btnRegresar = new javax.swing.JButton();
         btnRealizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        txtIdproveedor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Eras Bold ITC", 1, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Showcard Gothic", 0, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
         jLabel2.setText("CONSULTAS");
 
-        jLabel1.setVisible(false);
-        txtIdproveedor.setVisible(false);
-        txtIdproveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdproveedorActionPerformed(evt);
-            }
-        });
-
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
         jLabel1.setText("ID Proveedor:");
 
-        ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", "Productos de la categoria Desechables", "Clientes más frecuentes.", "Número de empleados totales", "Proveedores que cobran más de $1000", "Clientes que tengan un teléfono que empiece con ‘449’", "Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte de todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces" }));
+        ComboBoxOpciones.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        ComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.", "Productos que tengan un precio mayor a $100", "Clientes que su método de pago sea con tarjeta", "Productos de la categoria Desechables", "Clientes más frecuentes.", "Número de empleados totales", "Proveedores que cobran más de $1000", "Clientes que tengan un teléfono que empiece con ‘449’", "Empleados que tengan el puesto de ‘Jefe’", "Tipos de productos que suministra el proveedor", "Reporte de puesto y horario de los empleados", "Reporte del telefono de los clientes y proveedores", "Reporte que muestre los productos de la categoria Dulce", "Reporte del cliente y el empleado por quien fue atendido ", "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ", "Reporte de Empleados que tengan un horario matutino ", "Obtener el nombre del cliente y si su método de pago fue en efectivo ", "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ", "Reporte de todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor", "Mostrar el id y la categoría de los productos que su categoría sea de dulces","Reporte de categorías donde el precio total de productos supere $500","Reporte promedio de los pagos a  proveedores mayor a $1000"}));
+        ComboBoxOpciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxOpcionesActionPerformed(evt);
             }
         });
 
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(0, 102, 102));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,8 +104,11 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
 
+        btnRealizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnRealizar.setForeground(new java.awt.Color(0, 102, 102));
         btnRealizar.setText("Realizar");
 
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -118,75 +120,88 @@ public class Consultas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(204, 204, 204));
         jScrollPane1.setViewportView(jTable1);
+
+        txtIdproveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdproveedorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addComponent(btnRealizar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtIdproveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(68, 68, 68))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
                         .addComponent(jLabel1)
-                        .addGap(117, 117, 117)
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnRealizar))
-                .addGap(117, 117, 117))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                        .addGap(18, 18, 18)
+                        .addComponent(txtIdproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(txtIdproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRealizar)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnRegresar)
-                        .addGap(78, 78, 78))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(69, 69, 69))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(ComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRealizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        Dulceria dulc = new Dulceria();
+        dulc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     private void ComboBoxOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxOpcionesActionPerformed
-          String opcionSeleccionada = ComboBoxOpciones.getSelectedItem().toString();
+        String opcionSeleccionada = ComboBoxOpciones.getSelectedItem().toString();
         String consulta = "";
         if (opcionSeleccionada.equals("Tipos de productos que suministra el proveedor")) {
             // Mostrar el campo de texto y la etiqueta para ID de proveedor
@@ -194,42 +209,42 @@ public class Consultas extends javax.swing.JFrame {
             txtIdproveedor.setVisible(true);
         } else {
             // Ocultar el campo de texto y la etiqueta para ID de proveedor
-            jLabel1.setVisible(false);
-            txtIdproveedor.setVisible(false);
+            jLabel1.setVisible(true);
+            txtIdproveedor.setVisible(true);
         }
 
         switch (opcionSeleccionada) {
             case "Productos que tengan su fecha de caducidad menor al 1-Enero-2025.":
-                consulta = "SELECT * FROM Productos WHERE FechaCaducidad < '2025-01-01'";
-                break;
+            consulta = "SELECT * FROM Productos WHERE FechaCaducidad < '2025-01-01'";
+            break;
             case "Productos que tengan un precio mayor a $100":
-                consulta = "SELECT * FROM Productos WHERE PrecioProducto > 100";
-                break;
+            consulta = "SELECT * FROM Productos WHERE PrecioProducto > 100";
+            break;
             case "Clientes que su método de pago sea con tarjeta":
-                consulta = "SELECT * FROM Clientes WHERE MetodoPago = 'Tarjeta'";
-                break;
+            consulta = "SELECT * FROM Clientes WHERE MetodoPago = 'Tarjeta'";
+            break;
             case "Productos de la categoria Desechables":
-                consulta = "SELECT * FROM Productos WHERE Categoria = 'Desechables'";
-                break;
+            consulta = "SELECT * FROM Productos WHERE Categoria = 'Desechables'";
+            break;
             case "Clientes más frecuentes.":
-                consulta = "SELECT * FROM Clientes WHERE FrecuenciaCompra = (SELECT MAX(FrecuenciaCompra) FROM Clientes)";
-                break;
+            consulta = "SELECT * FROM Clientes WHERE FrecuenciaCompra = (SELECT MAX(FrecuenciaCompra) FROM Clientes)";
+            break;
             case "Número de empleados totales":
-                consulta = "SELECT COUNT(*) AS TotalEmpleados FROM Empleados";
-                break;
+            consulta = "SELECT COUNT(*) AS TotalEmpleados FROM Empleados";
+            break;
             case "Proveedores que cobran más de $1000":
-                consulta = "SELECT * FROM Proveedor WHERE Pago > 1000";
-                break;
+            consulta = "SELECT * FROM Proveedor WHERE Pago > 1000";
+            break;
             case "Clientes que tengan un teléfono que empiece con ‘449’":
-                consulta = "SELECT * FROM Clientes WHERE SUBSTRING(Telefono, 1, 3) = '449'";
-                break;
+            consulta = "SELECT * FROM Clientes WHERE SUBSTRING(Telefono, 1, 3) = '449'";
+            break;
             case "Empleados que tengan el puesto de ‘Jefe’":
-                consulta = "SELECT * FROM Empleados WHERE Puesto = 'Jefe'";
-                break;
+            consulta = "SELECT * FROM Empleados WHERE Puesto = 'Jefe'";
+            break;
             case "Tipos de productos que suministra el proveedor":
-                // Obtener el ID del proveedor desde el campo de texto
+            // Obtener el ID del proveedor desde el campo de texto
             String idProveedor = txtIdproveedor.getText().trim();
-            
+
             // Verificar que el campo no esté vacío
             if (idProveedor.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Por favor ingrese el ID del proveedor.");
@@ -244,7 +259,7 @@ public class Consultas extends javax.swing.JFrame {
                 PreparedStatement ps = conn.prepareStatement(consulta);
                 ps.setString(1, idProveedor); // Establecer el ID del proveedor como parámetro
                 ResultSet rs = ps.executeQuery();
-                
+
                 // Procesar y mostrar los resultados
                 DefaultTableModel modelo = new DefaultTableModel();
                 int columnCount = rs.getMetaData().getColumnCount();
@@ -261,59 +276,65 @@ public class Consultas extends javax.swing.JFrame {
                 jTable1.setModel(modelo); // Asignar los resultados a la tabla
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta: " + e.getMessage());
-                 e.printStackTrace();
+                e.printStackTrace();
             }
             break;
 
             //Algebra
             case "Reporte de puesto y horario de los empleados":
-                consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
-                break;
+            consulta = "SELECT Puesto, HorarioLaboral FROM Empleados";
+            break;
             case "Reporte del telefono de los clientes y proveedores":
-                consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
-                break;
+            consulta = "SELECT Telefono FROM Proveedor UNION SELECT Telefono FROM Clientes";
+            break;
             case "Reporte que muestre los productos de la categoria Dulce":
-                consulta = "SELECT * FROM Productos WHERE Categoria = 'Dulces'";
-                break;
+            consulta = "SELECT * FROM Productos WHERE Categoria = 'Dulces'";
+            break;
             case "Reporte del cliente y el empleado por quien fue atendido ":
-                consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado FROM Clientes C JOIN Atender A ON C.ID_Cliente = A.ID_Cliente JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
-                break;
+            consulta = "SELECT C.Nombre AS NombreCliente, E.Nombre AS NombreEmpleado FROM Clientes C JOIN Atender A ON C.ID_Cliente = A.ID_Cliente JOIN Empleados E ON A.ID_Empleado = E.ID_Empleado";
+            break;
             case "Reporte de productos que tengan una fecha de caducidad hasta febrero de 2025. ":
-                consulta = "SELECT * FROM Productos WHERE FechaCaducidad BETWEEN '2024-12-01' AND '2025-02-01'";
-                break;
+            consulta = "SELECT * FROM Productos WHERE FechaCaducidad BETWEEN '2024-12-01' AND '2025-02-01'";
+            break;
             case "Reporte de Empleados que tengan un horario matutino ":
-                consulta = "SELECT * FROM Empleados WHERE HorarioLaboral = '8:00-16:00'";
-                break;
+            consulta = "SELECT * FROM Empleados WHERE HorarioLaboral = '8:00-16:00'";
+            break;
             case "Obtener el nombre del cliente y si su método de pago fue en efectivo ":
-                consulta = "SELECT C.Nombre, C.MetodoPago FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE C.MetodoPago = 'Efectivo'";
-                break;
+            consulta = "SELECT C.Nombre, C.MetodoPago FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE C.MetodoPago = 'Efectivo'";
+            break;
             case "Un reporte que muestre el ID del cliente, el tipo de dulces comprados y la fecha de caducidad ":
-                consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE P.Categoria = 'Dulces'";
-                break;
+            consulta = "SELECT C.ID_Cliente, P.ID_Producto, P.FechaCaducidad FROM Clientes C JOIN Comprar Co ON C.ID_Cliente = Co.ID_Cliente JOIN Productos P ON Co.ID_Producto = P.ID_Producto WHERE P.Categoria = 'Dulces'";
+            break;
             case "Reporte de todos los id de productos que valgan lo mismo o sea menor a 300 con el proveedor":
-                consulta = "SELECT P.ID_Producto FROM Productos P JOIN Suministrar S ON P.ID_Producto = S.ID_Producto WHERE P.PrecioProducto <= 300";
-                break;
+            consulta = "SELECT P.ID_Producto FROM Productos P JOIN Suministrar S ON P.ID_Producto = S.ID_Producto WHERE P.PrecioProducto <= 300";
+            break;
             case "Mostrar el id y la categoría de los productos que su categoría sea de dulces":
-                consulta = "SELECT ID_Producto, Categoria FROM Productos WHERE Categoria = 'Dulces';";
+            consulta = "SELECT ID_Producto, Categoria FROM Productos WHERE Categoria = 'Dulces';";
+            break;
+            //HAVING
+            case "Reporte de categorías donde el precio total de productos supere $500":
+            consulta = "SELECT Categoria, SUM(PrecioProducto) AS PrecioTotal " +
+                       "FROM Productos " +
+                       "GROUP BY Categoria " +
+                       "HAVING SUM(PrecioProducto) > 500";
+            break;
+            case "Reporte promedio de los pagos a  proveedores mayor a $1000":
+                consulta="SELECT ID_Proveedor, AVG(Pago) AS PromedioPago" +
+                        " FROM Proveedor" + 
+                        " GROUP BY ID_Proveedor" + 
+                        " HAVING AVG(Pago) > 1000"; 
                 break;
             default:
-                JOptionPane.showMessageDialog(this, "Opción no reconocida.");
-                return;
+            JOptionPane.showMessageDialog(this, "Opción no reconocida.");
+            return;
         }
-    // Ejecutar la consulta y mostrar los resultados
-    ejecutarConsulta(consulta);
+        // Ejecutar la consulta y mostrar los resultados
+        ejecutarConsulta(consulta);
     }//GEN-LAST:event_ComboBoxOpcionesActionPerformed
 
     private void txtIdproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdproveedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdproveedorActionPerformed
-
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
-        Dulceria dulc = new Dulceria();
-        dulc.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnRegresarActionPerformed
 private void ejecutarConsulta(String consulta) {
     try (Connection conn = getConnection()) {
         ps = conn.prepareStatement(consulta);
