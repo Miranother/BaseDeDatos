@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.table.DefaultTableModel;
@@ -51,6 +52,10 @@ public class Consultas extends javax.swing.JFrame {
      */
     public Consultas() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);        
+        ImageIcon icono = new ImageIcon(getClass().getResource("/Recursos/dul.png"));
+        setIconImage(icono.getImage());
     }
 
     /**
